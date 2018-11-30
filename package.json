@@ -1,0 +1,27 @@
+{
+  "name": "react-native-dropdown-autocomplete",
+  "version": "1.0.0",
+  "author": "maxkordiyak",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "query-string": "^6.2.0",
+    "react-native-keyboard-aware-scroll-view": "^0.7.4",
+    "react-native-material-buttons": "^0.5.0",
+    "react-native-material-ripple": "^0.8.0"
+  },
+  "devDependencies": {
+    "eslint-config-react-app": "^3.0.5",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-with-prettier": "^4.2.0",
+    "eslint-plugin-jest": "^22.0.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}
