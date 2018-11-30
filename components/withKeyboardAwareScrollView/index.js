@@ -4,7 +4,7 @@ import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 import {isIos, isX} from "../../utils/common";
 import {theme} from "../../constants/Theme";
 
-export const withKeyboardAwareScrollView = WrappedComponent => {
+const withKeyboardAwareScrollView = WrappedComponent => {
   return class extends Component {
     constructor(props) {
       super(props);

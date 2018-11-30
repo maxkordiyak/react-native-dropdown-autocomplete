@@ -1,3 +1,4 @@
 import Autocomplete from "./components/Autocomplete";
+import withKeyboardAwareScrollView from "./components/withKeyboardAwareScrollView";
 
-export default Autocomplete;
+export {withKeyboardAwareScrollView, Autocomplete};

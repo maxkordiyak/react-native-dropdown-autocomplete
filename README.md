@@ -13,6 +13,11 @@ npm i react-native-dropdown-autocomplete
 ##### Wrap the page you want to have autocomplete on with ```withKeyboardAwareScrollView```:
 
 ```javascript
+import React from 'react';
+import {Ionicons} from '@expo/vector-icons';
+import shortid from "shortid";
+import {Autocomplete, withKeyboardAwareScrollView} from "react-native-dropdown-autocomplete";
+
 class HomeScreen extends Component {
   handleSelectItem(item, index) {
     const {onDropdownClose} = this.props;
@@ -36,13 +41,7 @@ class HomeScreen extends Component {
             onDropdownClose={() => onDropdownClose()}
             onDropdownShow={() => onDropdownShow()}
             renderIcon={() => (
-              <Icon
-                iconSet="Octicons" // icon set from Expo
-                size={20}
-                style={styles.plus}
-                name="plus"
-                color={theme.textSecondary}
-              />
+              <Ionicons name="ios-paper-plane" size={20} color="black" />
             )}
             fetchDataUrl="https://5b927fd14c818e001456e967.mockapi.io/branches"
             minimumCharactersCount={2}
