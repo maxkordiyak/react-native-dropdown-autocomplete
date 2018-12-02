@@ -459,7 +459,7 @@ export default class Dropdown extends PureComponent {
       inputValue,
       rightContent,
       valueExtractor,
-        highLightColor,
+      highLightColor,
     } = this.props;
     if (item === NO_DATA) {
       return this.renderEmptyItem();
@@ -469,7 +469,7 @@ export default class Dropdown extends PureComponent {
       text = highlightString(
         String(valueExtractor(item)),
         inputValue,
-        highLightColor || theme.textInvert,
+        highLightColor || theme.primary,
       );
     } else {
       text = capitalizeFirstLetter(String(valueExtractor(item)));
@@ -507,11 +507,11 @@ export default class Dropdown extends PureComponent {
       },
       rightContent
         ? {
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }
         : {},
     ];
 

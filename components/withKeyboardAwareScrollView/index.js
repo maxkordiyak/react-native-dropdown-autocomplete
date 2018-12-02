@@ -104,7 +104,7 @@ const withKeyboardAwareScrollView = WrappedComponent => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.bgPrimary,
+    backgroundColor: theme.backgroundPrimary,
     paddingBottom: isX ? 30 : 0,
   },
 });

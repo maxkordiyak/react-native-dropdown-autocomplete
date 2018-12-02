@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     flexWrap: "wrap",
     alignItems: "center",
     borderBottomWidth: 1,
-    borderColor: theme.dividerColor,
+    borderColor: theme.divider,
     paddingVertical: 13,
     paddingLeft: 12,
     paddingRight: "5%",
@@ -23,6 +23,7 @@ export const styles = StyleSheet.create({
     flexWrap: "wrap",
     flexGrow: 1,
     flexShrink: 1,
+    marginVertical: 4,
   },
   plus: {
     position: "absolute",
@@ -36,7 +37,7 @@ export const styles = StyleSheet.create({
   },
   list: {
     minWidth: "80%",
-    backgroundColor: theme.bgPrimary,
+    backgroundColor: theme.backgroundPrimary,
     paddingTop: 0,
     marginTop: 0,
     borderWidth: 1,
@@ -44,7 +45,7 @@ export const styles = StyleSheet.create({
     maxHeight: 300,
   },
   listShadow: {
-    backgroundColor: theme.bgPrimary,
+    backgroundColor: theme.backgroundPrimary,
     position: "absolute",
     zIndex: 3,
     top: 50,
@@ -59,7 +60,7 @@ export const styles = StyleSheet.create({
   listFooter: {
     height: 16.7,
     borderTopWidth: 1,
-    borderTopColor: theme.dividerColor,
+    borderTopColor: theme.divider,
   },
   input: {
     fontSize: theme.sizes.size20,
@@ -81,13 +82,13 @@ export const styles = StyleSheet.create({
   },
   listItemText: {
     justifyContent: "center",
-    color: theme.listItemColor,
+    color: theme.listItem,
   },
   listHeader: {
     height: 41.8,
     justifyContent: "center",
     paddingTop: 0,
-    backgroundColor: theme.bgPrimary,
+    backgroundColor: theme.backgroundPrimary,
     borderBottomWidth: 1,
     borderBottomColor: theme.primary,
   },
@@ -96,7 +97,7 @@ export const styles = StyleSheet.create({
   },
   separator: {
     height: 1,
-    backgroundColor: theme.dividerColor,
+    backgroundColor: theme.divider,
   },
   sectionSeparator: {
     backgroundColor: theme.primary,

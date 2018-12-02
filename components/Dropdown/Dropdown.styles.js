@@ -26,7 +26,7 @@ export default StyleSheet.create({
     overflow: "hidden",
     alignItems: "center",
 
-    backgroundColor: "transparent" /* XXX: Required */,
+    backgroundColor: "transparent",
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
@@ -59,7 +59,7 @@ export default StyleSheet.create({
   },
   separator: {
     height: 1,
-    backgroundColor: theme.dividerColor,
+    backgroundColor: theme.divider,
   },
   listItem: {
     paddingLeft: 15,
@@ -70,22 +70,22 @@ export default StyleSheet.create({
   listFooter: {
     height: 16.7,
     borderTopWidth: 1,
-    borderTopColor: theme.dividerColor,
+    borderTopColor: theme.divider,
   },
   listHeader: {
     height: 41.8,
     justifyContent: "center",
     paddingTop: 0,
-    backgroundColor: theme.bgPrimary,
+    backgroundColor: theme.backgroundPrimary,
     borderBottomWidth: 1,
     borderBottomColor: theme.primary,
   },
   listItemText: {
     justifyContent: "center",
-    color: theme.listItemColor,
+    color: theme.listItem,
   },
   noData: {
-    color: theme.dividerColor,
+    color: theme.divider,
   },
   listHeaderText: {
     color: theme.textSubtitle,
@@ -96,9 +96,9 @@ export default StyleSheet.create({
     paddingRight: 8,
   },
   phone: {
-    color: theme.dividerColor,
+    color: theme.divider,
     textDecorationLine: "underline",
     textDecorationStyle: "solid",
-    textDecorationColor: theme.dividerColor,
+    textDecorationColor: theme.divider,
   },
 });
