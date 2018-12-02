@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from "react";
 import {findNodeHandle, ActivityIndicator, TextInput, View} from "react-native";
-import {string, bool} from "prop-types";
+import {string, bool, object, number, func} from "prop-types";
 import Dropdown from "../Dropdown";
 import {capitalizeFirstLetter} from "../../utils/string";
 import {styles} from "./Autocomplete.styles";
@@ -112,7 +112,6 @@ class Autocomplete extends Component {
               this.container = ref;
             }}
             onBlur={event => this.handleBlur(event)}
-            autoCapitalize="sentences"
             style={[styles.input, inputStyle]}
             placeholder={placeholder}
             placeholderTextColor={placeholderColor || theme.textSecondary}
@@ -152,15 +151,29 @@ class Autocomplete extends Component {
 Autocomplete.defaultProps = {
   placeholder: locales.components.Autocomplete.placeholder,
   spinnerSize: "small",
-  listHeader: locales.components.Autocomplete.listHeader,
   autoCorrect: false,
+  minimumCharactersCount: 2,
+  highlightText: true,
 };
 
 Autocomplete.propTypes = {
   placeholder: string,
   spinnerSize: string,
   listHeader: string,
+  placeholderColor: string,
+  fetchDataUrl: string.isRequired,
+  minimumCharactersCount: number,
+  highlightText: bool,
+  rightContent: bool,
   autoCorrect: bool,
+
+  valueExtractor: func,
+  renderIcon: func,
+  scrollToInput: func.isRequired,
+  handleSelectItem: func.isRequired,
+  onDropdownClose: func.isRequired,
+  onDropdownShow: func.isRequired,
+  rightTextExtractor: func,
 };
 
 export default Autocomplete;

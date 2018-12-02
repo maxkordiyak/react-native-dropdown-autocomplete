@@ -19,125 +19,6 @@ import {NO_DATA} from "../../constants/Autocomplete";
 import {theme} from "../../constants/Theme";
 import locales from "../../constants/Locales";
 export default class Dropdown extends PureComponent {
-  static defaultProps = {
-    noDataText: locales.components.Autocomplete.noData,
-    hitSlop: {top: 6, right: 4, bottom: 6, left: 4},
-    disabled: false,
-    data: [],
-    valueExtractor: ({value} = {}) => value,
-    propsExtractor: () => null,
-    dropdownOffset: {
-      top: 50,
-      left: 20,
-    },
-    dropdownMargins: {
-      min: 8,
-      max: 16,
-    },
-    rippleCentered: false,
-    rippleSequential: true,
-    rippleInsets: {
-      top: 16,
-      right: 0,
-      bottom: -8,
-      left: 0,
-    },
-    rippleOpacity: 0.54,
-    shadeOpacity: 0.12,
-    rippleDuration: 400,
-    animationDuration: 225,
-    fontSize: theme.sizes.size16,
-    textColor: "rgba(0, 0, 0, .87)",
-    itemColor: "rgba(0, 0, 0, .54)",
-    baseColor: "rgba(0, 0, 0, .38)",
-    itemCount: 4,
-    itemPadding: 8,
-    supportedOrientations: [
-      "portrait",
-      "portrait-upside-down",
-      "landscape",
-      "landscape-left",
-      "landscape-right",
-    ],
-    useNativeDriver: false,
-  };
-
-  static propTypes = {
-    disabled: PropTypes.bool,
-
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-
-    data: PropTypes.arrayOf(
-      PropTypes.oneOfType(PropTypes.object, PropTypes.string),
-    ),
-
-    valueExtractor: PropTypes.func,
-    labelExtractor: PropTypes.func,
-    propsExtractor: PropTypes.func,
-
-    absoluteRTLLayout: PropTypes.bool,
-
-    dropdownOffset: PropTypes.shape({
-      top: PropTypes.number.isRequired,
-      left: PropTypes.number.isRequired,
-    }),
-
-    dropdownMargins: PropTypes.shape({
-      min: PropTypes.number.isRequired,
-      max: PropTypes.number.isRequired,
-    }),
-
-    dropdownPosition: PropTypes.number,
-
-    rippleColor: PropTypes.string,
-    rippleCentered: PropTypes.bool,
-    rippleSequential: PropTypes.bool,
-
-    rippleInsets: PropTypes.shape({
-      top: PropTypes.number,
-      right: PropTypes.number,
-      bottom: PropTypes.number,
-      left: PropTypes.number,
-    }),
-
-    rippleOpacity: PropTypes.number,
-    shadeOpacity: PropTypes.number,
-
-    rippleDuration: PropTypes.number,
-    animationDuration: PropTypes.number,
-
-    fontSize: PropTypes.number,
-
-    textColor: PropTypes.string,
-    itemColor: PropTypes.string,
-    selectedItemColor: PropTypes.string,
-    disabledItemColor: PropTypes.string,
-    baseColor: PropTypes.string,
-
-    itemTextStyle: Text.propTypes.style,
-    separatorStyle: (ViewPropTypes || View.propTypes).style,
-    listFooterStyle: (ViewPropTypes || View.propTypes).style,
-
-    itemCount: PropTypes.number,
-    itemPadding: PropTypes.number,
-
-    onLayout: PropTypes.func,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    onChangeText: PropTypes.func,
-
-    renderBase: PropTypes.func,
-    renderAccessory: PropTypes.func,
-
-    containerStyle: (ViewPropTypes || View.propTypes).style,
-    overlayStyle: (ViewPropTypes || View.propTypes).style,
-    pickerStyle: (ViewPropTypes || View.propTypes).style,
-
-    supportedOrientations: PropTypes.arrayOf(PropTypes.string),
-
-    useNativeDriver: PropTypes.bool,
-  };
-
   constructor(props) {
     super(props);
 
@@ -507,11 +388,11 @@ export default class Dropdown extends PureComponent {
       },
       rightContent
         ? {
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }
         : {},
     ];
 
@@ -555,10 +436,10 @@ export default class Dropdown extends PureComponent {
   }
 
   renderHeader() {
-    const {listHeader} = this.props;
+    const {listHeader, listHeaderStyle} = this.props;
 
     return listHeader ? (
-      <View style={[styles.listItem, styles.listHeader]}>
+      <View style={[styles.listItem, styles.listHeader, listHeaderStyle]}>
         <Text style={styles.listHeaderText} key={listHeader} size={17}>
           {listHeader.toUpperCase()}
         </Text>
@@ -627,3 +508,127 @@ export default class Dropdown extends PureComponent {
     );
   }
 }
+
+Dropdown.propTypes = {
+  noDataText: PropTypes.string,
+  hitSlop: PropTypes.object,
+  onChangeValue: PropTypes.func,
+  inputValue: PropTypes.string,
+  listHeader: PropTypes.string,
+  disabled: PropTypes.bool,
+
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+  data: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  ),
+
+  valueExtractor: PropTypes.func,
+  labelExtractor: PropTypes.func,
+  propsExtractor: PropTypes.func,
+
+  absoluteRTLLayout: PropTypes.bool,
+
+  dropdownOffset: PropTypes.shape({
+    top: PropTypes.number.isRequired,
+    left: PropTypes.number.isRequired,
+  }),
+
+  dropdownMargins: PropTypes.shape({
+    min: PropTypes.number.isRequired,
+    max: PropTypes.number.isRequired,
+  }),
+
+  dropdownPosition: PropTypes.number,
+
+  rippleColor: PropTypes.string,
+  rippleCentered: PropTypes.bool,
+  rippleSequential: PropTypes.bool,
+
+  rippleInsets: PropTypes.shape({
+    top: PropTypes.number,
+    right: PropTypes.number,
+    bottom: PropTypes.number,
+    left: PropTypes.number,
+  }),
+
+  rippleOpacity: PropTypes.number,
+  shadeOpacity: PropTypes.number,
+
+  rippleDuration: PropTypes.number,
+  animationDuration: PropTypes.number,
+
+  fontSize: PropTypes.number,
+
+  textColor: PropTypes.string,
+  itemColor: PropTypes.string,
+  selectedItemColor: PropTypes.string,
+  disabledItemColor: PropTypes.string,
+  baseColor: PropTypes.string,
+
+  itemTextStyle: Text.propTypes.style,
+  separatorStyle: (ViewPropTypes || View.propTypes).style,
+  listFooterStyle: (ViewPropTypes || View.propTypes).style,
+  listHeaderStyle: (ViewPropTypes || View.propTypes).style,
+  itemCount: PropTypes.number,
+  itemPadding: PropTypes.number,
+
+  onLayout: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  onChangeText: PropTypes.func,
+
+  renderBase: PropTypes.func,
+  renderAccessory: PropTypes.func,
+
+  containerStyle: (ViewPropTypes || View.propTypes).style,
+  overlayStyle: (ViewPropTypes || View.propTypes).style,
+  pickerStyle: (ViewPropTypes || View.propTypes).style,
+
+  supportedOrientations: PropTypes.arrayOf(PropTypes.string),
+
+  useNativeDriver: PropTypes.bool,
+};
+
+Dropdown.defaultProps = {
+  noDataText: locales.components.Autocomplete.noData,
+  hitSlop: {top: 6, right: 4, bottom: 6, left: 4},
+  disabled: false,
+  data: [],
+  valueExtractor: ({value} = {}) => value,
+  propsExtractor: () => null,
+  dropdownOffset: {
+    top: 50,
+    left: 20,
+  },
+  dropdownMargins: {
+    min: 8,
+    max: 16,
+  },
+  rippleCentered: false,
+  rippleSequential: true,
+  rippleInsets: {
+    top: 16,
+    right: 0,
+    bottom: -8,
+    left: 0,
+  },
+  rippleOpacity: 0.54,
+  shadeOpacity: 0.12,
+  rippleDuration: 400,
+  animationDuration: 225,
+  fontSize: theme.sizes.size16,
+  textColor: "rgba(0, 0, 0, .87)",
+  itemColor: "rgba(0, 0, 0, .54)",
+  baseColor: "rgba(0, 0, 0, .38)",
+  itemCount: 4,
+  itemPadding: 8,
+  supportedOrientations: [
+    "portrait",
+    "portrait-upside-down",
+    "landscape",
+    "landscape-left",
+    "landscape-right",
+  ],
+  useNativeDriver: false,
+};

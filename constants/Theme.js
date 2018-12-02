@@ -9,6 +9,7 @@ export const theme = {
   textSubtitle: colors.darkConcrete,
   listItem: colors.muddyGray,
   divider: colors.lightGray,
+  textSecondary: colors.concrete,
   sizes: {
     size15: responsiveFontSize(15 / PixelRatio.getFontScale()),
     size16: responsiveFontSize(16 / PixelRatio.getFontScale()),

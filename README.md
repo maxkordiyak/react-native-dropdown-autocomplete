@@ -9,6 +9,7 @@ Based on https://bit.ly/2AFjUsj, the most significant advantage of this package 
 </p>
 
 ## Usage
+
 ##### Install the package
 ```
 npm i react-native-dropdown-autocomplete
@@ -101,7 +102,38 @@ const styles = StyleSheet.create({
 export default withKeyboardAwareScrollView(HomeScreen);
 ```
 
+## Properties
+
+ name              | description                                   | type     | default
+:----------------- |:--------------------------------------------- | --------:|:------------------
+ autoCorrect       | Disable auto-correct                          |  Boolean | true
+ highlightText     | Highlight search results                      |  Boolean | true
+ rightContent      | Render additional text to the right of the item |  Boolean | false
+ minimumCharactersCount  | Perform API request after certain number of characters entered       |   Number | 2
+ placeholder       | Autocomplete input placeholder text           |   String | Add Item
+ placeholderColor  | Input placeholder color                       |   String | #acada9
+ spinnerSize       | Size of activity indicator                    |   String | small
+ spinnerColor      | Activity indicator color                      |   String | #129a8d
+ listHeader        | Text at the beginning of suggestions          |   String | -
+ fetchDataUrl      | Data source url                               |   String | -
+ noDataText        | Text to display when no results               |   String | No Results
+ inputContainerStyle | Styles for autocomplete container           |   Object | -
+ inputStyle        | Styles for autocomplete input                 |   Object | -
+ spinnerStyle      | Styles for activity indicator                 |   Object | -
+ noDataTextStyle   | Styles for empty results text                 |   Object | -
+ separatorStyle    | Styles for item dividers                      |   Object | -
+ listFooterStyle   | Styles for list footer                        |   Object | -
+ listHeaderStyle   | Styles for list header                        |   Object | -
+ scrollToInput     | Focus on selected field                       | Function | -
+ handleSelectItem  | Selection callback (agrs: item, index)        | Function | -
+ onDropdownShow    | Show keyboard                                 | Function | -
+ onDropdownClose   | Hide  keyboard                                | Function | -
+ renderIcon        | Render icon near input                        | Function | -
+ valueExtractor    | Extract value from item (args: item, index)   | Function | ({ value }) => value
+ rightTextExtractor   | Extract value from item (args: item, index)   | Function | ({ value }) => value
+
 ### Authors:
+
  **[Maksym Plotnikov](https://github.com/maksym-plotnikov)**
  
  **[Maksym Kordiyak](https://github.com/maxkordiyak)**
