@@ -18,7 +18,7 @@ npm i react-native-dropdown-autocomplete
 ##### Wrap the page you want to have autocomplete on with ```withKeyboardAwareScrollView```:
 
 ```javascript
-import React from "react";
+import React, {Component} from "react";
 import {StyleSheet, View, SafeAreaView} from "react-native";
 import {Ionicons} from "@expo/vector-icons";
 import shortid from "shortid";
