@@ -1,6 +1,9 @@
+[npm-badge]: https://img.shields.io/npm/v/react-native-dropdown-autocomplete.svg?colorA=6b7c93&colorB=5ab1b8&style=flat-square
+[npm-url]: https://www.npmjs.com/package/react-native-dropdown-autocomplete
+[npm-downloads]: https://img.shields.io/npm/dt/react-native-dropdown-autocomplete.svg?colorA=6b7c93&colorB=5ab1b8&style=flat-square
 # react-native-dropdown-autocomplete
 
-[![npm (scoped)](https://img.shields.io/badge/npm-v1.0.0-blue.svg)](https://www.npmjs.com/package/react-native-dropdown-autocomplete)
+[![npm][npm-badge]][npm-url] [![npm][npm-downloads]][npm-url]
 
 Based on https://bit.ly/2AFjUsj, the most significant advantage of this package among all others is that you can have multiple autocomplete's on your page after following instructions below. Works on Android and IOS.
 <p align="center">

@@ -1,10 +1,17 @@
 {
   "name": "react-native-dropdown-autocomplete",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "maxkordiyak",
   "repository": "maxkordiyak/react-native-dropdown-autocomplete",
   "license": "MIT",
   "main": "index.js",
+  "keywords": [
+    "react-native",
+    "dropdown",
+    "autocomplete",
+    "react-native-modal",
+    "react-native-dropdown"
+  ],
   "dependencies": {
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
