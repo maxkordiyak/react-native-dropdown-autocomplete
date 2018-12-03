@@ -127,6 +127,13 @@ export default withKeyboardAwareScrollView(HomeScreen);
  separatorStyle    | Styles for item dividers                      |   Object | -
  listFooterStyle   | Styles for list footer                        |   Object | -
  listHeaderStyle   | Styles for list header                        |   Object | -
+ rightContentStyle | Styles for right content                      |   Object | -
+ rightContentItemStyle | Styles for right content text             |   Object | -
+ listHeaderTextStyle | Styles for list header text                 |   Object | -
+  overlayStyle      | Styles for overlay view                       |   Object | -
+  pickerStyle       | Styles for item picker view                   |   Object | -
+ containerStyle | Styles for dropdown container view              |   Object | -
+
  scrollToInput     | Focus on selected field                       | Function | -
  handleSelectItem  | Selection callback (agrs: item, index)        | Function | -
  onDropdownShow    | Show keyboard                                 | Function | -

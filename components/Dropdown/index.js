@@ -326,7 +326,6 @@ export default class Dropdown extends PureComponent {
       <DropdownItem index={0} style={{paddingLeft: 15}}>
         <Text
           style={[styles.listItemText, styles.noData, noDataTextStyle]}
-          size={19}
         >
           {noDataText}
         </Text>
@@ -368,6 +367,8 @@ export default class Dropdown extends PureComponent {
       shadeOpacity,
       rightTextExtractor,
       listItemTextStyle,
+      rightContentStyle,
+      rightContentItemStyle,
     } = this.props;
 
     const props = !propsExtractor(item, index) && {
@@ -404,15 +405,14 @@ export default class Dropdown extends PureComponent {
             rightContent ? {maxWidth: 200} : {},
             listItemTextStyle,
           ]}
-          size={19}
           numberOfLines={1}
           ellipsizeMode="tail"
         >
           {text}
         </Text>
         {rightContent && (
-          <View style={styles.phones}>
-            <Text key={item.id} style={styles.phone} size={15}>
+          <View style={[styles.rightContent, rightContentStyle]}>
+            <Text key={item.id} style={[styles.rightContentItem, rightContentItemStyle]}>
               {rightTextExtractor(item)}
             </Text>
           </View>
@@ -436,11 +436,11 @@ export default class Dropdown extends PureComponent {
   }
 
   renderHeader() {
-    const {listHeader, listHeaderStyle} = this.props;
+    const {listHeader, listHeaderStyle, listHeaderTextStyle} = this.props;
 
     return listHeader ? (
       <View style={[styles.listItem, styles.listHeader, listHeaderStyle]}>
-        <Text style={styles.listHeaderText} key={listHeader} size={17}>
+        <Text style={[styles.listHeaderText, listHeaderTextStyle]} key={listHeader}>
           {listHeader.toUpperCase()}
         </Text>
       </View>

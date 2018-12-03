@@ -90,12 +90,12 @@ export default StyleSheet.create({
   listHeaderText: {
     color: theme.textSubtitle,
   },
-  phones: {
+  rightContent: {
     display: "flex",
     flexDirection: "column",
     paddingRight: 8,
   },
-  phone: {
+  rightContentItem: {
     color: theme.divider,
     textDecorationLine: "underline",
     textDecorationStyle: "solid",
