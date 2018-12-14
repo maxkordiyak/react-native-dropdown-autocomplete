@@ -113,6 +113,7 @@ export default withKeyboardAwareScrollView(HomeScreen);
  highlightText     | Highlight search results                      |  Boolean | true
  rightContent      | Render additional text to the right of the item |  Boolean | false
  minimumCharactersCount  | Perform API request after certain number of characters entered       |   Number | 2
+ waitInterval      | Timeout between user finished typing and new data fetch | Number | 400
  placeholder       | Autocomplete input placeholder text           |   String | Add Item
  placeholderColor  | Input placeholder color                       |   String | #acada9
  spinnerSize       | Size of activity indicator                    |   String | small

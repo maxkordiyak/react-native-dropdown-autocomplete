@@ -29,7 +29,7 @@ class Autocomplete extends Component {
   }
 
   handleInputChange(text) {
-    const {minimumCharactersCount} = this.props;
+    const {minimumCharactersCount, waitInterval} = this.props;
     clearTimeout(this.timer);
     this.setState({inputValue: text});
     if (text.length > minimumCharactersCount) {
@@ -39,7 +39,7 @@ class Autocomplete extends Component {
         },
         () => {
           if (this.mounted) {
-            this.timer = setTimeout(this.triggerChange, WAIT_INTERVAL);
+            this.timer = setTimeout(this.triggerChange, waitInterval);
           }
         },
       );
@@ -193,6 +193,7 @@ Autocomplete.defaultProps = {
   autoCorrect: false,
   minimumCharactersCount: 2,
   highlightText: true,
+  waitInterval: WAIT_INTERVAL,
 };
 
 Autocomplete.propTypes = {
@@ -202,6 +203,7 @@ Autocomplete.propTypes = {
   placeholderColor: string,
   fetchDataUrl: string,
   minimumCharactersCount: number,
+  waitInterval: number,
   highlightText: bool,
   rightContent: bool,
   autoCorrect: bool,
