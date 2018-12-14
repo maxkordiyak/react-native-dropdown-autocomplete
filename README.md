@@ -105,6 +105,27 @@ const styles = StyleSheet.create({
 export default withKeyboardAwareScrollView(HomeScreen);
 ```
 
+## Usage without data-driven content
+You can also pass fixed array of items to the Autocomplete
+```javascript
+const data = [
+  "Apples",
+  "Broccoli",
+  "Chicken",
+  "Duck",
+  "Eggs",
+  "Fish",
+  "Granola",
+  "Hash Browns",
+];
+```
+
+Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
+```javascript
+<Autocomplete data={data} valueExtactor={item => item} />
+```
+
+
 ## Properties
 
  name              | description                                   | type     | default

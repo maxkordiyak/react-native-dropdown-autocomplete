@@ -56,7 +56,7 @@ class Autocomplete extends Component {
   }
 
   async triggerChange() {
-    const {inputValue} = this.state;
+    const {inputValue, items} = this.state;
     const {fetchDataUrl, valueExtractor} = this.props;
     if (fetchDataUrl) {
       try {
@@ -73,7 +73,7 @@ class Autocomplete extends Component {
         throw new Error(error);
       }
     } else {
-      const filteredItems = this.state.items.filter(item => {
+      const filteredItems = items.filter(item => {
         return (
           valueExtractor(item)
             .toLowerCase()
@@ -108,9 +108,10 @@ class Autocomplete extends Component {
   }
 
   componentDidMount() {
+    const {data} = this.props;
     this.mounted = true;
-    if (this.props.data) {
-      this.setState({items: this.props.data});
+    if (data) {
+      this.setState({items: data});
     }
   }
 
