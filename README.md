@@ -146,3 +146,5 @@ export default withKeyboardAwareScrollView(HomeScreen);
  **[Maksym Plotnikov](https://github.com/maksym-plotnikov)**
  
  **[Maksym Kordiyak](https://github.com/maxkordiyak)**
+ 
+  While developing our react-native application I found out that there's no autocomplete library available which can satisfy a need for > 1 autocomplete on a page. Styles were overlapping and due to position: "absolute" we weren't able to actually trigger TouchableOpacity on an element from the list on android device. We used a library which provides dropdown with auto-adjusting position using measureInWindow on a ref, we tweaked it a bit and with autocomplete input and time-slicing implementation we managed to get what we need. Still we can't interact with TextInput component while dropdown is opened but this is the best result we got using React Native Modal.
