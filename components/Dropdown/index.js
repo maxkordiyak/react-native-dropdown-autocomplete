@@ -324,9 +324,7 @@ export default class Dropdown extends PureComponent {
 
     return (
       <DropdownItem index={0} style={{paddingLeft: 15}}>
-        <Text
-          style={[styles.listItemText, styles.noData, noDataTextStyle]}
-        >
+        <Text style={[styles.listItemText, styles.noData, noDataTextStyle]}>
           {noDataText}
         </Text>
       </DropdownItem>
@@ -412,7 +410,10 @@ export default class Dropdown extends PureComponent {
         </Text>
         {rightContent && (
           <View style={[styles.rightContent, rightContentStyle]}>
-            <Text key={item.id} style={[styles.rightContentItem, rightContentItemStyle]}>
+            <Text
+              key={item.id}
+              style={[styles.rightContentItem, rightContentItemStyle]}
+            >
               {rightTextExtractor(item)}
             </Text>
           </View>
@@ -440,7 +441,10 @@ export default class Dropdown extends PureComponent {
 
     return listHeader ? (
       <View style={[styles.listItem, styles.listHeader, listHeaderStyle]}>
-        <Text style={[styles.listHeaderText, listHeaderTextStyle]} key={listHeader}>
+        <Text
+          style={[styles.listHeaderText, listHeaderTextStyle]}
+          key={listHeader}
+        >
           {listHeader.toUpperCase()}
         </Text>
       </View>

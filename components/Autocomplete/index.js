@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from "react";
 import {findNodeHandle, ActivityIndicator, TextInput, View} from "react-native";
-import {string, bool, object, number, func} from "prop-types";
+import {string, bool, number, func} from "prop-types";
 import Dropdown from "../Dropdown";
 import {capitalizeFirstLetter} from "../../utils/string";
 import {styles} from "./Autocomplete.styles";
@@ -15,6 +15,7 @@ class Autocomplete extends Component {
     this.state = {
       inputValue: "",
       loading: false,
+      filteredItems: [],
     };
     this.mounted = false;
     this.timer = null;
@@ -24,6 +25,7 @@ class Autocomplete extends Component {
     this.triggerChange = this.triggerChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.promisifySetState = this.promisifySetState.bind(this);
   }
 
   handleInputChange(text) {
@@ -46,21 +48,54 @@ class Autocomplete extends Component {
     }
   }
 
+  promisifySetState(state) {
+    return (
+      this.mounted &&
+      new Promise(resolve => this.setState(state, () => resolve()))
+    );
+  }
+
   async triggerChange() {
     const {inputValue} = this.state;
-    const {fetchDataUrl} = this.props;
-    try {
-      const response = await get(fetchDataUrl, {search: inputValue});
-      if (response.length && this.mounted) {
-        this.setState({items: response, loading: false});
-      } else {
-        this.setState({items: [NO_DATA], loading: false});
+    const {fetchDataUrl, valueExtractor} = this.props;
+    if (fetchDataUrl) {
+      try {
+        const response = await get(fetchDataUrl, {search: inputValue});
+        if (response.length && this.mounted) {
+          this.setState({items: response, loading: false});
+        } else {
+          this.setState({items: [NO_DATA], loading: false});
+        }
+        if (this.dropdown) {
+          this.dropdown.onPress(this.container);
+        }
+      } catch (error) {
+        throw new Error(error);
       }
+    } else {
+      const filteredItems = this.state.items.filter(item => {
+        return (
+          valueExtractor(item)
+            .toLowerCase()
+            .search(inputValue.toLowerCase()) !== -1
+        );
+      });
+
+      if (filteredItems.length && this.mounted) {
+        await this.promisifySetState({
+          filteredItems,
+          loading: false,
+        });
+      } else {
+        await this.promisifySetState({
+          filteredItems: [NO_DATA],
+          loading: false,
+        });
+      }
+
       if (this.dropdown) {
         this.dropdown.onPress(this.container);
       }
-    } catch (error) {
-      throw new Error(error);
     }
   }
 
@@ -74,6 +109,9 @@ class Autocomplete extends Component {
 
   componentDidMount() {
     this.mounted = true;
+    if (this.props.data) {
+      this.setState({items: this.props.data});
+    }
   }
 
   componentWillUnmount() {
@@ -87,7 +125,7 @@ class Autocomplete extends Component {
   }
 
   render() {
-    const {inputValue, items, loading} = this.state;
+    const {inputValue, items, loading, filteredItems} = this.state;
     const {
       placeholder,
       scrollToInput,
@@ -100,6 +138,7 @@ class Autocomplete extends Component {
       autoCorrect,
       spinnerColor,
       placeholderColor,
+      data,
       ...dropdownProps
     } = this.props;
 
@@ -136,7 +175,7 @@ class Autocomplete extends Component {
               this.dropdown = ref;
             }}
             dropdownPosition={0}
-            data={items}
+            data={data ? filteredItems : items}
             listHeader={listHeader}
             inputValue={inputValue}
             onChangeValue={this.setItem}
@@ -161,7 +200,7 @@ Autocomplete.propTypes = {
   spinnerSize: string,
   listHeader: string,
   placeholderColor: string,
-  fetchDataUrl: string.isRequired,
+  fetchDataUrl: string,
   minimumCharactersCount: number,
   highlightText: bool,
   rightContent: bool,

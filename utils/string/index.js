@@ -12,15 +12,12 @@ export const highlightString = (string, valueToHighlight, highlightColor) => {
 
   if (startIndex > -1) {
     return [
+      <Text key="substring_0">{string.substring(0, startIndex)}</Text>,
       <Text key="substring_1" style={{color: highlightColor}}>
-        {capitalizeFirstLetter(
-          string
-            .toLowerCase()
-            .substring(startIndex, startIndex + valueToHighlight.length),
-        )}
+        {string.substring(startIndex, startIndex + valueToHighlight.length)}
       </Text>,
       <Fragment key="substring_2">
-        {string.toLowerCase().substring(startIndex + valueToHighlight.length)}
+        {string.substring(startIndex + valueToHighlight.length)}
       </Fragment>,
     ];
   }
