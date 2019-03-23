@@ -122,7 +122,7 @@ const data = [
 
 Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
 ```javascript
-<Autocomplete data={data} valueExtactor={item => item} />
+<Autocomplete data={data} valueExtractor={item => item} />
 ```
 
 
