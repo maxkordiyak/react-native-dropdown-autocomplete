@@ -100,11 +100,15 @@ class Autocomplete extends Component {
   }
 
   setItem(value) {
-    const {index, handleSelectItem, valueExtractor} = this.props;
-    const capitalizedValue = capitalizeFirstLetter(valueExtractor(value));
-    this.setState({inputValue: capitalizedValue});
-
+    const { index, handleSelectItem, valueExtractor, resetOnSelect } = this.props;
     handleSelectItem(value, index);
+      
+    if (resetOnSelect) {
+      this.setState({ inputValue: '' });
+    } else {
+        const capitalizedValue = capitalizeFirstLetter(valueExtractor(value));
+        this.setState({inputValue: capitalizedValue});
+    }
   }
 
   componentDidMount() {
@@ -195,6 +199,7 @@ Autocomplete.defaultProps = {
   minimumCharactersCount: 2,
   highlightText: true,
   waitInterval: WAIT_INTERVAL,
+  resetOnSelect: false,
 };
 
 Autocomplete.propTypes = {
@@ -208,6 +213,7 @@ Autocomplete.propTypes = {
   highlightText: bool,
   rightContent: bool,
   autoCorrect: bool,
+  resetOnSelect: bool,
 
   valueExtractor: func,
   renderIcon: func,
