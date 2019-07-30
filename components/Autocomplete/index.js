@@ -150,7 +150,7 @@ class Autocomplete extends Component {
     return (
       <Fragment>
         <View style={[styles.inputContainerStyle, inputContainerStyle]}>
-          {renderIcon()}
+          {renderIcon && renderIcon()}
           <TextInput
             ref={ref => {
               this.container = ref;
