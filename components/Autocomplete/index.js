@@ -236,8 +236,8 @@ Autocomplete.propTypes = {
   renderIcon: func,
   scrollToInput: func.isRequired,
   handleSelectItem: func.isRequired,
-  onDropdownClose: func.isRequired,
-  onDropdownShow: func.isRequired,
+  onDropdownClose: func,
+  onDropdownShow: func,
   rightTextExtractor: func,
   fetchData: func,
 };

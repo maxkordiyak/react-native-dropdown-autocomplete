@@ -35,8 +35,8 @@ type AutocompleteProps = {
 
     scrollToInput: (ev: any) => void,
     handleSelectItem: (item: any, index: number) => void,
-    onDropdownShow: () => void,
-    onDropdownClose: () => void,
+    onDropdownShow?: () => void,
+    onDropdownClose?: () => void,
     onChangeText?: (search: string) => void,
     renderIcon?: () => void,
     valueExtractor?: (item: any) => void,

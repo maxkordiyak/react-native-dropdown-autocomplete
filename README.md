@@ -161,7 +161,7 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  scrollToInput     | Focus on selected field                       | Function | -
  handleSelectItem  | Selection callback (args: item, index)        | Function | -
  onDropdownShow    | Show keyboard                                 | Function | -
- onDropdownClose   | Hide  keyboard                                | Function | -
+ onDropdownClose   | Hide keyboard                                 | Function | -
  onChangeText      | Autocomplete input text changes               | Function | -
  renderIcon        | Render icon near input                        | Function | -
  valueExtractor    | Extract value from item (args: item, index)   | Function | ({ value }) => value
