@@ -117,14 +117,14 @@ class Autocomplete extends Component {
   }
 
   setItem(value) {
-    const { index, handleSelectItem, valueExtractor, resetOnSelect } = this.props;
+    const {index, handleSelectItem, valueExtractor, resetOnSelect} = this.props;
     handleSelectItem(value, index);
-      
+
     if (resetOnSelect) {
-      this.setState({ inputValue: '' });
+      this.setState({inputValue: ""});
     } else {
-        const capitalizedValue = capitalizeFirstLetter(valueExtractor(value));
-        this.setState({inputValue: capitalizedValue});
+      const capitalizedValue = capitalizeFirstLetter(valueExtractor(value));
+      this.setState({inputValue: capitalizedValue});
     }
   }
 
