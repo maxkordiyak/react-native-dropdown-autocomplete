@@ -15,7 +15,6 @@ type AutocompleteProps = {
     spinnerColor?: string,
     listHeader?: string,
     fetchDataUrl?: string,
-    fetchDataParams?: any,
     noDataText?: string;
     inputContainerStyle?: any;
     inputStyle?: any;
@@ -38,6 +37,7 @@ type AutocompleteProps = {
     renderIcon?: () => void,
     valueExtractor?: (item: any) => void,
     rightTextExtractor?: (item: any) => void,
+    fetchData?: (search: string) => Promise<any>,
 }
 
 export class Autocomplete extends React.Component<AutocompleteProps, any> {
