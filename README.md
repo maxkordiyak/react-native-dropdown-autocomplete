@@ -163,6 +163,7 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  renderIcon        | Render icon near input                        | Function | -
  valueExtractor    | Extract value from item (args: item, index)   | Function | ({ value }) => value
  rightTextExtractor   | Extract value from item (args: item, index)   | Function | ({ value }) => value
+ fetchData         | Fetch data for autocomplete                   | Function | (searchInput) => Promise
 
 ### Authors:
 
