@@ -6,6 +6,7 @@ import { ViewStyle, TextStyle, StyleProp } from 'react-native';
 type AutocompleteProps = {
     autoCorrect?: boolean,
     highlightText?: boolean,
+    highLightColor?: string,
     rightContent?: boolean,
     resetOnSelect?: boolean,
     minimumCharactersCount?: number,

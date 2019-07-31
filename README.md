@@ -132,6 +132,7 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
 :----------------- |:--------------------------------------------- | --------:|:------------------
  autoCorrect       | Disable auto-correct                          |  Boolean | true
  highlightText     | Highlight search results                      |  Boolean | true
+ highLightColor    | Highlight text color                          |   String | #129a8d
  rightContent      | Render additional text to the right of the item |  Boolean | false
  resetOnSelect     | Reset the input after choosing an item        |  Boolean | false
  minimumCharactersCount  | Perform API request after certain number of characters entered       |   Number | 2
