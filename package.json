@@ -15,7 +15,7 @@
   "dependencies": {
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
-    "react-native-keyboard-aware-scroll-view": "^0.7.4",
+    "react-native-keyboard-aware-scroll-view": "^0.8.0",
     "react-native-material-buttons": "^0.5.0",
     "react-native-material-ripple": "^0.8.0"
   },
