@@ -57,8 +57,22 @@ class Autocomplete extends Component {
 
   async triggerChange() {
     const {inputValue, items} = this.state;
-    const {fetchDataUrl, valueExtractor} = this.props;
-    if (fetchDataUrl) {
+    const {fetchData, fetchDataUrl, valueExtractor} = this.props;
+    if (fetchData) {
+      try {
+        const response = await fetchData(inputValue);
+        if (response.length && this.mounted) {
+          this.setState({items: response, loading: false});
+        } else {
+          this.setState({items: [NO_DATA], loading: false});
+        }
+        if (this.dropdown) {
+          this.dropdown.onPress(this.container);
+        }
+      } catch (error) {
+        throw new Error(error);
+      }
+    } else if (fetchDataUrl) {
       try {
         const response = await get(fetchDataUrl, {search: inputValue});
         if (response.length && this.mounted) {
@@ -222,6 +236,7 @@ Autocomplete.propTypes = {
   onDropdownClose: func.isRequired,
   onDropdownShow: func.isRequired,
   rightTextExtractor: func,
+  fetchData: func,
 };
 
 export default Autocomplete;
