@@ -30,6 +30,7 @@ type AutocompleteProps = {
     overlayStyle?: StyleProp<TextStyle>;
     pickerStyle?: StyleProp<TextStyle>;
     containerStyle?: StyleProp<ViewStyle>;
+    scrollStyle?: StyleProp<ViewStyle>;
 
     scrollToInput: (ev: any) => void,
     handleSelectItem: (item: any, index: number) => void,

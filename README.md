@@ -155,7 +155,8 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  listHeaderTextStyle | Styles for list header text                 |   Object | -
  overlayStyle      | Styles for overlay view                       |   Object | -
  pickerStyle       | Styles for item picker view                   |   Object | -
- containerStyle | Styles for dropdown container view               |   Object | -
+ containerStyle    | Styles for dropdown container view            |   Object | -
+ scrollStyle       | Styles for dropdown flatlist                  |   Object | -
  scrollToInput     | Focus on selected field                       | Function | -
  handleSelectItem  | Selection callback (agrs: item, index)        | Function | -
  onDropdownShow    | Show keyboard                                 | Function | -
