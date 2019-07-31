@@ -1,6 +1,7 @@
 // Type definitions for react-native-dropdown-autocomplete 1.0
 
 import * as React from 'react';
+import { ViewStyle, TextStyle, StyleProp } from 'react-native';
 
 type AutocompleteProps = {
     autoCorrect?: boolean,
@@ -16,19 +17,19 @@ type AutocompleteProps = {
     listHeader?: string,
     fetchDataUrl?: string,
     noDataText?: string;
-    inputContainerStyle?: any;
-    inputStyle?: any;
-    spinnerStyle?: any;
-    noDataTextStyle?: any;
-    separatorStyle?: any;
-    listFooterStyle?: any;
-    listHeaderStyle?: any;
-    rightContentStyle?: any;
-    rightContentItemStyle?: any;
-    listHeaderTextStyle?: any;
-    overlayStyle?: any;
-    pickerStyle?: any;
-    containerStyle?: any;
+    inputContainerStyle?: StyleProp<ViewStyle>;
+    inputStyle?: StyleProp<TextStyle>;
+    spinnerStyle?: StyleProp<ViewStyle>;
+    noDataTextStyle?: StyleProp<TextStyle>;
+    separatorStyle?: StyleProp<ViewStyle>;
+    listFooterStyle?: StyleProp<ViewStyle>;
+    listHeaderStyle?: StyleProp<ViewStyle>;
+    rightContentStyle?: StyleProp<ViewStyle>;
+    rightContentItemStyle?: StyleProp<TextStyle>;
+    listHeaderTextStyle?: StyleProp<TextStyle>;
+    overlayStyle?: StyleProp<TextStyle>;
+    pickerStyle?: StyleProp<TextStyle>;
+    containerStyle?: StyleProp<ViewStyle>;
 
     scrollToInput: (ev: any) => void,
     handleSelectItem: (item: any, index: number) => void,
@@ -37,7 +38,7 @@ type AutocompleteProps = {
     renderIcon?: () => void,
     valueExtractor?: (item: any) => void,
     rightTextExtractor?: (item: any) => void,
-    fetchData?: (search: string) => Promise<any>,
+    fetchData?: (search: string) => Promise<any[]>,
 }
 
 export class Autocomplete extends React.Component<AutocompleteProps, any> {
