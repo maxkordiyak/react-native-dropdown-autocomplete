@@ -1,10 +1,23 @@
 [npm-badge]: https://img.shields.io/npm/v/react-native-dropdown-autocomplete.svg?colorA=6b7c93&colorB=5ab1b8&style=flat-square
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [npm-url]: https://www.npmjs.com/package/react-native-dropdown-autocomplete
 [npm-downloads]: https://img.shields.io/npm/dt/react-native-dropdown-autocomplete.svg?colorA=6b7c93&colorB=5ab1b8&style=flat-square
 # react-native-dropdown-autocomplete
 
 [![npm][npm-badge]][npm-url] [![npm][npm-downloads]][npm-url]
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://paitoanderson.com/"><img src="https://avatars0.githubusercontent.com/u/4108718?v=4" width="100px;" alt="Paito Anderson"/><br /><sub><b>Paito Anderson</b></sub></a><br /><a href="https://github.com/maxkordiyak/react-native-dropdown-autocomplete/commits?author=PaitoAnderson" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 Based on https://bit.ly/2AFjUsj, the most significant advantage of this package among all others is that you can have multiple autocomplete's on your page after following instructions below. Works on Android and IOS.
 <p align="center">
@@ -177,18 +190,3 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  
   While developing our react-native application I found out that there's no autocomplete library available which can satisfy a need for > 1 autocomplete on a page. Styles were overlapping and due to position: "absolute" we weren't able to actually trigger TouchableOpacity on an element from the list on android device. We used a library which provides dropdown with auto-adjusting position using measureInWindow on a ref, we tweaked it a bit and with autocomplete input and time-slicing implementation we managed to get what we need. Still we can't interact with TextInput component while dropdown is opened but this is the best result we got using React Native Modal.
 
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://paitoanderson.com/"><img src="https://avatars0.githubusercontent.com/u/4108718?v=4" width="100px;" alt="Paito Anderson"/><br /><sub><b>Paito Anderson</b></sub></a><br /><a href="https://github.com/maxkordiyak/react-native-dropdown-autocomplete/commits?author=PaitoAnderson" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
