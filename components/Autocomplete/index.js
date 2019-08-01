@@ -29,7 +29,10 @@ class Autocomplete extends Component {
   }
 
   handleInputChange(text) {
-    const {minimumCharactersCount, waitInterval} = this.props;
+    const {onChangeText, minimumCharactersCount, waitInterval} = this.props;
+    if (onChangeText) {
+      onChangeText(text);
+    }
     clearTimeout(this.timer);
     this.setState({inputValue: text});
     if (text.length > minimumCharactersCount) {
@@ -114,14 +117,14 @@ class Autocomplete extends Component {
   }
 
   setItem(value) {
-    const { index, handleSelectItem, valueExtractor, resetOnSelect } = this.props;
+    const {index, handleSelectItem, valueExtractor, resetOnSelect} = this.props;
     handleSelectItem(value, index);
-      
+
     if (resetOnSelect) {
-      this.setState({ inputValue: '' });
+      this.setState({inputValue: ""});
     } else {
-        const capitalizedValue = capitalizeFirstLetter(valueExtractor(value));
-        this.setState({inputValue: capitalizedValue});
+      const capitalizedValue = capitalizeFirstLetter(valueExtractor(value));
+      this.setState({inputValue: capitalizedValue});
     }
   }
 
@@ -233,8 +236,8 @@ Autocomplete.propTypes = {
   renderIcon: func,
   scrollToInput: func.isRequired,
   handleSelectItem: func.isRequired,
-  onDropdownClose: func.isRequired,
-  onDropdownShow: func.isRequired,
+  onDropdownClose: func,
+  onDropdownShow: func,
   rightTextExtractor: func,
   fetchData: func,
 };

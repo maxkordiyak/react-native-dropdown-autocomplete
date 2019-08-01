@@ -454,6 +454,7 @@ export default class Dropdown extends PureComponent {
   render() {
     const {
       containerStyle,
+      scrollStyle,
       overlayStyle: overlayStyleOverrides,
       pickerStyle: pickerStyleOverrides,
       supportedOrientations,
@@ -497,7 +498,7 @@ export default class Dropdown extends PureComponent {
                 keyboardShouldPersistTaps="always"
                 ref={this.updateScrollRef}
                 data={itemData}
-                style={styles.scroll}
+                style={[styles.scroll, scrollStyle]}
                 renderItem={this.renderItem}
                 keyExtractor={this.keyExtractor}
                 scrollEnabled={visibleItemCount <= itemCount}

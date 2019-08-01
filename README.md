@@ -132,6 +132,7 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
 :----------------- |:--------------------------------------------- | --------:|:------------------
  autoCorrect       | Disable auto-correct                          |  Boolean | true
  highlightText     | Highlight search results                      |  Boolean | true
+ highLightColor    | Highlight text color                          |   String | #129a8d
  rightContent      | Render additional text to the right of the item |  Boolean | false
  resetOnSelect     | Reset the input after choosing an item        |  Boolean | false
  minimumCharactersCount  | Perform API request after certain number of characters entered       |   Number | 2
@@ -155,15 +156,17 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  listHeaderTextStyle | Styles for list header text                 |   Object | -
  overlayStyle      | Styles for overlay view                       |   Object | -
  pickerStyle       | Styles for item picker view                   |   Object | -
- containerStyle | Styles for dropdown container view               |   Object | -
+ containerStyle    | Styles for dropdown container view            |   Object | -
+ scrollStyle       | Styles for dropdown flatlist                  |   Object | -
  scrollToInput     | Focus on selected field                       | Function | -
- handleSelectItem  | Selection callback (agrs: item, index)        | Function | -
+ handleSelectItem  | Selection callback (args: item, index)        | Function | -
  onDropdownShow    | Show keyboard                                 | Function | -
- onDropdownClose   | Hide  keyboard                                | Function | -
+ onDropdownClose   | Hide keyboard                                 | Function | -
+ onChangeText      | Autocomplete input text changes               | Function | -
  renderIcon        | Render icon near input                        | Function | -
  valueExtractor    | Extract value from item (args: item, index)   | Function | ({ value }) => value
  rightTextExtractor   | Extract value from item (args: item, index)   | Function | ({ value }) => value
- fetchData         | Fetch data for autocomplete                   | Function | (searchInput) => Promise
+ fetchData         | Fetch data for autocomplete                   | Function | -
 
 ### Authors:
 

@@ -6,6 +6,7 @@ import { ViewStyle, TextStyle, StyleProp } from 'react-native';
 type AutocompleteProps = {
     autoCorrect?: boolean,
     highlightText?: boolean,
+    highLightColor?: string,
     rightContent?: boolean,
     resetOnSelect?: boolean,
     minimumCharactersCount?: number,
@@ -30,11 +31,13 @@ type AutocompleteProps = {
     overlayStyle?: StyleProp<TextStyle>;
     pickerStyle?: StyleProp<TextStyle>;
     containerStyle?: StyleProp<ViewStyle>;
+    scrollStyle?: StyleProp<ViewStyle>;
 
     scrollToInput: (ev: any) => void,
     handleSelectItem: (item: any, index: number) => void,
-    onDropdownShow: () => void,
-    onDropdownClose: () => void,
+    onDropdownShow?: () => void,
+    onDropdownClose?: () => void,
+    onChangeText?: (search: string) => void,
     renderIcon?: () => void,
     valueExtractor?: (item: any) => void,
     rightTextExtractor?: (item: any) => void,
