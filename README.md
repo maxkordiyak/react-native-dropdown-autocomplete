@@ -5,20 +5,6 @@
 
 [![npm][npm-badge]][npm-url] [![npm][npm-downloads]][npm-url]
 
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://paitoanderson.com/"><img src="https://avatars0.githubusercontent.com/u/4108718?v=4" width="100px;" alt="Paito Anderson"/><br /><sub><b>Paito Anderson</b></sub></a><br /><a href="https://github.com/maxkordiyak/react-native-dropdown-autocomplete/commits?author=PaitoAnderson" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
 Based on https://bit.ly/2AFjUsj, the most significant advantage of this package among all others is that you can have multiple autocomplete's on your page after following instructions below. Works on Android and IOS.
 <p align="center">
 <img src="https://media.giphy.com/media/AS6Ts8m31qVFNpVHUZ/giphy.gif" alt="Autocomplete demo">
@@ -181,6 +167,20 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  valueExtractor    | Extract value from item (args: item, index)   | Function | ({ value }) => value
  rightTextExtractor   | Extract value from item (args: item, index)   | Function | ({ value }) => value
  fetchData         | Fetch data for autocomplete                   | Function | -
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://paitoanderson.com/"><img src="https://avatars0.githubusercontent.com/u/4108718?v=4" width="100px;" alt="Paito Anderson"/><br /><sub><b>Paito Anderson</b></sub></a><br /><a href="https://github.com/maxkordiyak/react-native-dropdown-autocomplete/commits?author=PaitoAnderson" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ### Authors:
 
