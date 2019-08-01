@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "PaitoAnderson",
+      "name": "Paito Anderson",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4108718?v=4",
+      "profile": "https://paitoanderson.com/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "react-native-dropdown-autocomplete",
+  "projectOwner": "maxkordiyak",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
