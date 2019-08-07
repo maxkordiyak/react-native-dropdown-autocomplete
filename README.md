@@ -144,6 +144,7 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  listHeader        | Text at the beginning of suggestions          |   String | -
  fetchDataUrl      | Data source url                               |   String | -
  noDataText        | Text to display when no results               |   String | No Results
+ initialValue      | Text to display initially                     |   String | -
  inputContainerStyle | Styles for autocomplete container           |   Object | -
  inputStyle        | Styles for autocomplete input                 |   Object | -
  spinnerStyle      | Styles for activity indicator                 |   Object | -

@@ -13,7 +13,7 @@ class Autocomplete extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: "",
+      inputValue: props.initialValue || "",
       loading: false,
       filteredItems: [],
     };

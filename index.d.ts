@@ -18,6 +18,7 @@ type AutocompleteProps = {
     listHeader?: string,
     fetchDataUrl?: string,
     noDataText?: string;
+    initialValue?: string;
     inputContainerStyle?: StyleProp<ViewStyle>;
     inputStyle?: StyleProp<TextStyle>;
     spinnerStyle?: StyleProp<ViewStyle>;
