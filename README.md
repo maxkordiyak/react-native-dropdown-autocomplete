@@ -131,6 +131,7 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  name              | description                                   | type     | default
 :----------------- |:--------------------------------------------- | --------:|:------------------
  autoCorrect       | Disable auto-correct                          |  Boolean | true
+ keyboardType      | Input Keyboard Type                           |   String | default
  highlightText     | Highlight search results                      |  Boolean | true
  highLightColor    | Highlight text color                          |   String | #129a8d
  rightContent      | Render additional text to the right of the item |  Boolean | false

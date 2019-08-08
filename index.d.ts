@@ -1,10 +1,11 @@
 // Type definitions for react-native-dropdown-autocomplete 1.0
 
 import * as React from 'react';
-import { ViewStyle, TextStyle, StyleProp } from 'react-native';
+import { ViewStyle, TextStyle, StyleProp, KeyboardTypeOptions } from 'react-native';
 
 type AutocompleteProps = {
     autoCorrect?: boolean,
+    keyboardType?: KeyboardTypeOptions;
     highlightText?: boolean,
     highLightColor?: string,
     rightContent?: boolean,

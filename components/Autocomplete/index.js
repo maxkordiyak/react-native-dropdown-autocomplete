@@ -158,6 +158,7 @@ class Autocomplete extends Component {
       spinnerSize,
       listHeader,
       autoCorrect,
+      keyboardType,
       spinnerColor,
       placeholderColor,
       data,
@@ -178,6 +179,7 @@ class Autocomplete extends Component {
             placeholderTextColor={placeholderColor || theme.textSecondary}
             value={inputValue}
             autoCorrect={autoCorrect}
+            keyboardType={keyboardType}
             onChangeText={text => this.handleInputChange(text)}
             onFocus={event => {
               scrollToInput(findNodeHandle(event.target));
@@ -213,6 +215,7 @@ Autocomplete.defaultProps = {
   placeholder: locales.components.Autocomplete.placeholder,
   spinnerSize: "small",
   autoCorrect: false,
+  keyboardType: "default",
   minimumCharactersCount: 2,
   highlightText: true,
   waitInterval: WAIT_INTERVAL,
@@ -230,6 +233,7 @@ Autocomplete.propTypes = {
   highlightText: bool,
   rightContent: bool,
   autoCorrect: bool,
+  keyboardType: string,
   resetOnSelect: bool,
 
   valueExtractor: func,
