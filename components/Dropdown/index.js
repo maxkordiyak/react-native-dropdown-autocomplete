@@ -159,6 +159,20 @@ export default class Dropdown extends PureComponent {
     });
   }
 
+  close() {
+    const {onBlur, onDropdownClose} = this.props;
+
+    if (typeof onBlur === "function") {
+      onBlur();
+    }
+    if (typeof onDropdownClose === "function") {
+      onDropdownClose();
+    }
+    if (this.mounted) {
+      this.setState({modal: false});
+    }
+  }
+
   onClose(val) {
     const {onBlur, onDropdownClose} = this.props;
     const {value} = this.state;
