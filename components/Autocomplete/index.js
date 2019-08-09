@@ -143,7 +143,7 @@ class Autocomplete extends Component {
 
   handleBlur() {
     clearTimeout(this.timer);
-    this.setState({loading: false});
+    this.setState({loading: false, items: []});
   }
 
   render() {

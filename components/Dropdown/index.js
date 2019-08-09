@@ -2,8 +2,6 @@ import React, {PureComponent} from "react";
 import {
   View,
   Animated,
-  Modal,
-  TouchableOpacity,
   Dimensions,
   Platform,
   FlatList,
@@ -474,7 +472,6 @@ export default class Dropdown extends PureComponent {
     const pickerStyle = {
       width,
       height,
-      top,
       left,
       transform: [{translateY}],
     };
@@ -483,32 +480,20 @@ export default class Dropdown extends PureComponent {
 
     return (
       <View onLayout={this.onLayout} style={containerStyle}>
-        <Modal
-          visible={modal}
-          transparent
-          onRequestClose={this.blur}
-          supportedOrientations={supportedOrientations}
-        >
-          <TouchableOpacity
-            onPress={this.blur}
-            style={[styles.overlay, overlayStyleOverrides]}
-          >
-            <View style={[styles.picker, pickerStyle, pickerStyleOverrides]}>
-              <FlatList
-                keyboardShouldPersistTaps="always"
-                ref={this.updateScrollRef}
-                data={itemData}
-                style={[styles.scroll, scrollStyle]}
-                renderItem={this.renderItem}
-                keyExtractor={this.keyExtractor}
-                scrollEnabled={visibleItemCount <= itemCount}
-                ItemSeparatorComponent={this.renderSeparator}
-                ListFooterComponent={this.renderFooter}
-                ListHeaderComponent={this.renderHeader}
-              />
-            </View>
-          </TouchableOpacity>
-        </Modal>
+        {modal && <View style={[styles.picker, pickerStyle, pickerStyleOverrides]}>
+          <FlatList
+            keyboardShouldPersistTaps="always"
+            ref={this.updateScrollRef}
+            data={itemData}
+            style={[styles.scroll, scrollStyle]}
+            renderItem={this.renderItem}
+            keyExtractor={this.keyExtractor}
+            scrollEnabled={visibleItemCount <= itemCount}
+            ItemSeparatorComponent={this.renderSeparator}
+            ListFooterComponent={this.renderFooter}
+            ListHeaderComponent={this.renderHeader}
+          />
+        </View>}
       </View>
     );
   }
