@@ -480,20 +480,22 @@ export default class Dropdown extends PureComponent {
 
     return (
       <View onLayout={this.onLayout} style={containerStyle}>
-        {modal && <View style={[styles.picker, pickerStyle, pickerStyleOverrides]}>
-          <FlatList
-            keyboardShouldPersistTaps="always"
-            ref={this.updateScrollRef}
-            data={itemData}
-            style={[styles.scroll, scrollStyle]}
-            renderItem={this.renderItem}
-            keyExtractor={this.keyExtractor}
-            scrollEnabled={visibleItemCount <= itemCount}
-            ItemSeparatorComponent={this.renderSeparator}
-            ListFooterComponent={this.renderFooter}
-            ListHeaderComponent={this.renderHeader}
-          />
-        </View>}
+        {modal && (
+          <View style={[styles.picker, pickerStyle, pickerStyleOverrides]}>
+            <FlatList
+              keyboardShouldPersistTaps="always"
+              ref={this.updateScrollRef}
+              data={itemData}
+              style={[styles.scroll, scrollStyle]}
+              renderItem={this.renderItem}
+              keyExtractor={this.keyExtractor}
+              scrollEnabled={visibleItemCount <= itemCount}
+              ItemSeparatorComponent={this.renderSeparator}
+              ListFooterComponent={this.renderFooter}
+              ListHeaderComponent={this.renderHeader}
+            />
+          </View>
+        )}
       </View>
     );
   }
