@@ -69,8 +69,8 @@ class Autocomplete extends Component {
         } else {
           this.setState({items: [NO_DATA], loading: false});
         }
-        if (this.dropdown) {
-          this.dropdown.onPress(this.container);
+        if (this.dropdown.current) {
+          this.dropdown.current.onPress(this.container);
         }
       } catch (error) {
         throw new Error(error);
@@ -83,8 +83,8 @@ class Autocomplete extends Component {
         } else {
           this.setState({items: [NO_DATA], loading: false});
         }
-        if (this.dropdown) {
-          this.dropdown.onPress(this.container);
+        if (this.dropdown.current) {
+          this.dropdown.current.onPress(this.container);
         }
       } catch (error) {
         throw new Error(error);
@@ -110,8 +110,8 @@ class Autocomplete extends Component {
         });
       }
 
-      if (this.dropdown) {
-        this.dropdown.onPress(this.container);
+      if (this.dropdown.current) {
+        this.dropdown.current.onPress(this.container);
       }
     }
   }
@@ -144,8 +144,8 @@ class Autocomplete extends Component {
   handleBlur() {
     clearTimeout(this.timer);
     this.setState({loading: false});
-    if (this.dropdown) {
-      this.dropdown.close();
+    if (this.dropdown.current) {
+      this.dropdown.current.close();
     }
   }
 
@@ -198,9 +198,7 @@ class Autocomplete extends Component {
         </View>
         {items && items.length > 0 && (
           <Dropdown
-            ref={ref => {
-              this.dropdown = ref;
-            }}
+            ref={this.dropdown}
             dropdownPosition={0}
             data={data ? filteredItems : items}
             listHeader={listHeader}
