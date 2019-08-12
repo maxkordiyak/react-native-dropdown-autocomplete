@@ -34,7 +34,6 @@ export default StyleSheet.create({
   picker: {
     backgroundColor: "rgba(255, 255, 255, 1.0)",
     borderRadius: 2,
-    position: "absolute",
     ...Platform.select({
       ios: {
         shadowRadius: 2,

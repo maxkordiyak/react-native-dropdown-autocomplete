@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React, {PureComponent} from "react";
+import {Keyboard} from 'react-native';
 import {Button} from "react-native-material-buttons";
 import styles from "./DropdownItem.styles";
 import {theme} from "../../constants/Theme";
@@ -31,6 +32,7 @@ export default class DropdownItem extends PureComponent {
 
     if (typeof onPress === "function") {
       onPress(index);
+      Keyboard.dismiss();
     }
   }
 
