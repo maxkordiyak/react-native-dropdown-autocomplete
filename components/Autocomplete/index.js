@@ -185,7 +185,9 @@ class Autocomplete extends Component {
             keyboardType={keyboardType}
             onChangeText={text => this.handleInputChange(text)}
             onFocus={event => {
-              scrollToInput(findNodeHandle(event.target));
+              if (scrollToInput) {
+                scrollToInput(findNodeHandle(event.target));
+              }
             }}
           />
           {loading && (
@@ -239,7 +241,7 @@ Autocomplete.propTypes = {
 
   valueExtractor: func,
   renderIcon: func,
-  scrollToInput: func.isRequired,
+  scrollToInput: func,
   handleSelectItem: func.isRequired,
   onDropdownClose: func,
   onDropdownShow: func,

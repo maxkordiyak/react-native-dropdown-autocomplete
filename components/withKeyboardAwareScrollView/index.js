@@ -66,12 +66,6 @@ const withKeyboardAwareScrollView = WrappedComponent => {
     }
 
     render() {
-      const wrappedComponentProps = {
-        scrollToInput: this.scrollToInput,
-        keyboardDidHide: this.keyboardDidHide,
-        keyboardDidShow: this.keyboardDidShow,
-      };
-
       return (
         <KeyboardAwareScrollView
           innerRef={ref => {
