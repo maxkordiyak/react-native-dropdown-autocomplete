@@ -130,6 +130,7 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
 
  name              | description                                   | type     | default
 :----------------- |:--------------------------------------------- | --------:|:------------------
+ ref               | Used to access component methods ("clearInput" for example)   |  RefObject | -
  autoCorrect       | Disable auto-correct                          |  Boolean | true
  keyboardType      | Input Keyboard Type                           |   String | default
  highlightText     | Highlight search results                      |  Boolean | true
@@ -169,6 +170,28 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  valueExtractor    | Extract value from item (args: item, index)   | Function | ({ value }) => value
  rightTextExtractor   | Extract value from item (args: item, index)   | Function | ({ value }) => value
  fetchData         | Fetch data for autocomplete                   | Function | -
+
+
+## Methods
+
+You can use methods through `ref` property:
+```javascript
+...
+const componentRef = useRef()
+<Autocomplete
+  ref={componentRef}
+  ...
+/>
+...
+componentRef.current.clearInput()
+```
+
+### Methods list
+
+ method            | description                                   | return
+:----------------- |:---------------------------------------------:|:-------
+ clearInput        | Clears input value                            | -
+
 
 ## Contributors ✨
 
