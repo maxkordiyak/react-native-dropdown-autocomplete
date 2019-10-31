@@ -47,7 +47,7 @@ type AutocompleteProps = {
 }
 
 export class Autocomplete extends React.Component<AutocompleteProps, any> {
-    clear(): void;
+    clearInput(): void;
 }
 
 export function withKeyboardAwareScrollView<P>(
