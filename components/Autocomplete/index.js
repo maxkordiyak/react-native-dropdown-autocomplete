@@ -26,6 +26,7 @@ class Autocomplete extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.promisifySetState = this.promisifySetState.bind(this);
+    this.clearInput = this.clearInput.bind(this);
   }
 
   handleInputChange(text) {
@@ -126,6 +127,10 @@ class Autocomplete extends Component {
       const capitalizedValue = capitalizeFirstLetter(valueExtractor(value));
       this.setState({inputValue: capitalizedValue});
     }
+  }
+
+  clearInput() {
+    this.setState({inputValue: ""});
   }
 
   componentDidMount() {
