@@ -170,6 +170,7 @@ class Autocomplete extends Component {
       spinnerColor,
       placeholderColor,
       data,
+      disableFullscreenUI,
       ...dropdownProps
     } = this.props;
 
@@ -185,6 +186,7 @@ class Autocomplete extends Component {
             style={[styles.input, inputStyle]}
             placeholder={placeholder}
             placeholderTextColor={placeholderColor || theme.textSecondary}
+            disableFullscreenUI={disableFullscreenUI}
             value={inputValue}
             autoCorrect={autoCorrect}
             keyboardType={keyboardType}
