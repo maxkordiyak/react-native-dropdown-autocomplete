@@ -148,6 +148,7 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  noDataText        | Text to display when no results               |   String | No Results
  initialValue      | Text to display initially                     |   String | -
  inputContainerStyle | Styles for autocomplete container           |   Object | -
+ disableFullscreenUI | disable display inputfield in fullscreen | Boolean | false
  inputStyle        | Styles for autocomplete input                 |   Object | -
  spinnerStyle      | Styles for activity indicator                 |   Object | -
  noDataTextStyle   | Styles for empty results text                 |   Object | -
@@ -170,6 +171,7 @@ Change valueExtractor and pass the data to Autocomplete without fetchDataUrl
  valueExtractor    | Extract value from item (args: item, index)   | Function | ({ value }) => value
  rightTextExtractor   | Extract value from item (args: item, index)   | Function | ({ value }) => value
  fetchData         | Fetch data for autocomplete                   | Function | -
+
 
 
 ## Methods
@@ -210,8 +212,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 ### Authors:
 
  **[Maksym Plotnikov](https://github.com/maksym-plotnikov)**
- 
- **[Maksym Kordiyak](https://github.com/maxkordiyak)**
- 
-  While developing our react-native application I found out that there's no autocomplete library available which can satisfy a need for > 1 autocomplete on a page. Styles were overlapping and due to position: "absolute" we weren't able to actually trigger TouchableOpacity on an element from the list on android device. We used a library which provides dropdown with auto-adjusting position using measureInWindow on a ref, we tweaked it a bit and with autocomplete input and time-slicing implementation we managed to get what we need. Still we can't interact with TextInput component while dropdown is opened but this is the best result we got using React Native Modal.
 
+ **[Maksym Kordiyak](https://github.com/maxkordiyak)**
+
+  While developing our react-native application I found out that there's no autocomplete library available which can satisfy a need for > 1 autocomplete on a page. Styles were overlapping and due to position: "absolute" we weren't able to actually trigger TouchableOpacity on an element from the list on android device. We used a library which provides dropdown with auto-adjusting position using measureInWindow on a ref, we tweaked it a bit and with autocomplete input and time-slicing implementation we managed to get what we need. Still we can't interact with TextInput component while dropdown is opened but this is the best result we got using React Native Modal.
